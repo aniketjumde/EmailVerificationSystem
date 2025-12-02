@@ -38,7 +38,6 @@ A secure Java-based authentication system that provides:
 ## 5️⃣ Project Folder Structure  
 
 ```
->>>>>>> 50e0d63 (Update readme file)
 Email_Verification_Login_System/
  ├── src/
  │    ├── main/java/com/auth/
@@ -61,34 +60,8 @@ Email_Verification_Login_System/
  │           └── dashboard.jsp
  ├── pom.xml
  └── README.md
-<<<<<<< HEAD
 
-6️⃣ How to Run the Project
-✔ Step 1 — Clone Repository
-git clone https://github.com/aniketjumde/EmailVerificationSystem
 
-✔ Step 2 — Import in IDE
-
-Import as Maven Project in Eclipse / IntelliJ.
-
-✔ Step 3 — Configure Database
-
-Edit hibernate.cfg.xml with your DB username & password.
-
-✔ Step 4 — Create Required Tables
-
-Run the SQL schema provided below.
-
-✔ Step 5 — Configure Email SMTP
-
-Update SMTP credentials in EmailService.java.
-
-✔ Step 6 — Deploy on Apache Tomcat
-✔ Step 7 — Run Application
-http://localhost:8080/EmailVerificationSystem/
-
-7️⃣ Database Schema
-=======
 ```
 
 ## 6️⃣ How to Run the Project  
@@ -158,25 +131,7 @@ CREATE TABLE login_attempts (
     last_attempt DATETIME,
     locked_until DATETIME NULL
 );
-<<<<<<< HEAD
 
-8️⃣ Email Configuration (JavaMail)
-
-Update SMTP settings in your email utility class:
-
-SMTP_HOST = "smtp.gmail.com"
-SMTP_PORT = "587"
-SENDER_EMAIL = "your-email@gmail.com"
-APP_PASSWORD = "your-app-password"
-
-
-Use Gmail App Password (recommended) or SMTP credentials.
-
-🔟 Author
-
-Developed by: Aniket Jumde
-GitHub: https://github.com/aniketjumde
-=======
 ```
 
 ## 8️⃣ Email Configuration (JavaMail)  
@@ -195,4 +150,3 @@ Use **Gmail App Password** (recommended) for secure SMTP access.
 ## 🔟 Author  
 **Developed by: Aniket Jumde**  
 GitHub: https://github.com/aniketjumde  
->>>>>>> 50e0d63 (Update readme file)
