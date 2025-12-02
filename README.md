@@ -147,6 +147,6 @@ APP_PASSWORD   = "your-app-password"
 
 Use **Gmail App Password** (recommended) for secure SMTP access.
 
-## 🔟 Author  
-**Developed by: Aniket Jumde**  
+## 🧑‍💻 Developed By  
+**Aniket Jumde**  
 GitHub: https://github.com/aniketjumde  
