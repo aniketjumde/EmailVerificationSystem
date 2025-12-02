@@ -1,56 +1,144 @@
-# 📧 Email Verification & Login System (MVC + Hibernate + JSP + Servlets)
+📧 Email Verification Login System
+1️⃣ Project Title
 
-A complete, production-grade **User Authentication System** built using  
-**Java Servlets, JSP, Hibernate ORM, JDBC, and Apache Tomcat**, featuring:
+Email Verification Login System
 
-✔ User Registration with **Email Verification**  
-✔ Secure Login with **BCrypt Password Hashing**  
-✔ Forgot & Reset Password  
-✔ Account Locking on repeated failed logins  
-✔ MVC Architecture + Design Patterns  
-✔ Token-based security flows  
-✔ Session & Input Security  
+2️⃣ Project Description
 
----
+A secure Java-based authentication system that provides:
 
-# 🚀 Features
+User Registration
 
-### 🔐 **Authentication & Security**
-- User Registration with Email Verification
-- User Login with BCrypt password hashing
-- Forgot Password & Reset Password using email-token
-- Login Attempt Tracking (locks account after 5 failed attempts)
-- Role-based access (optional extension)
-- Input validation & sanitization
-- CSRF Token protection
-- Security Headers added:
-  - XSS-Protection  
-  - X-Frame-Options  
-  - Content-Type-Options  
+Login Authentication
 
----
+Email Verification using OTP / Secure Token
 
-# 🧱 Architecture
+Secure Password Hashing
 
-### ✔ **MVC Architecture**
-- **Model:** Hibernate Entities (User, PasswordReset, EmailVerification, LoginAttempt)
-- **View:** JSP + JSTL
-- **Controller:** Servlets (LoginServlet, RegisterServlet, VerifyServlet, etc.)
+Session Handling for authenticated users
 
-### ✔ **Design Patterns Used**
-#### 🟦 **Singleton Pattern**
-Used in `HibernateUtil.java`  
-Ensures a single `SessionFactory` instance.
+3️⃣ Features
 
-```java
-public class HibernateUtil {
-    private static final SessionFactory sessionFactory = buildSessionFactory();
+✔ User Registration
+✔ Email OTP / Token Verification
+✔ Login after successful verification
+✔ Resend Verification Email
+✔ Forgot Password & Reset Password
+✔ Secure Password Hashing (BCrypt)
+✔ Logout Functionality
+✔ Input Validation (email, password, fields)
+✔ MVC Architecture (Servlet + JSP + DAO + Service)
 
-    private static SessionFactory buildSessionFactory() {
-        return new Configuration().configure().buildSessionFactory();
-    }
+4️⃣ Technology Stack
 
-    public static SessionFactory getSessionFactory() {
-        return sessionFactory;
-    }
-}
+Java (Servlet/JSP)
+
+JSP / JSTL
+
+Hibernate / JDBC
+
+MySQL Database
+
+JavaMail API
+
+Apache Tomcat Server
+
+HTML, CSS, JavaScript
+
+5️⃣ Project Folder Structure
+Email_Verification_Login_System/
+ ├── src/
+ │    ├── main/java/com/auth/
+ │    │      ├── controller/
+ │    │      ├── dao/
+ │    │      ├── service/
+ │    │      ├── config/
+ │    │      ├── util/
+ │    │      └── model/
+ │    ├── main/resources/
+ │    │      └── hibernate.cfg.xml
+ │    └── main/webapp/
+ │           ├── WEB-INF/
+ │           │      └── web.xml
+ │           ├── login.jsp
+ │           ├── register.jsp
+ │           ├── verify.jsp
+ │           ├── forgot-password.jsp
+ │           ├── reset-password.jsp
+ │           └── dashboard.jsp
+ ├── pom.xml
+ └── README.md
+
+6️⃣ How to Run the Project
+✔ Step 1 — Clone Repository
+git clone https://github.com/aniketjumde/EmailVerificationSystem
+
+✔ Step 2 — Import in IDE
+
+Import as Maven Project in Eclipse / IntelliJ.
+
+✔ Step 3 — Configure Database
+
+Edit hibernate.cfg.xml with your DB username & password.
+
+✔ Step 4 — Create Required Tables
+
+Run the SQL schema provided below.
+
+✔ Step 5 — Configure Email SMTP
+
+Update SMTP credentials in EmailService.java.
+
+✔ Step 6 — Deploy on Apache Tomcat
+✔ Step 7 — Run Application
+http://localhost:8080/EmailVerificationSystem/
+
+7️⃣ Database Schema
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    role VARCHAR(30) DEFAULT 'USER',
+    status ENUM('INACTIVE','ACTIVE') DEFAULT 'INACTIVE',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE email_verification (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    token VARCHAR(255) NOT NULL,
+    expiry DATETIME NOT NULL
+);
+
+CREATE TABLE password_reset (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    token VARCHAR(255) NOT NULL,
+    expiry DATETIME NOT NULL
+);
+
+CREATE TABLE login_attempts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(150) NOT NULL,
+    attempts INT DEFAULT 0,
+    last_attempt DATETIME,
+    locked_until DATETIME NULL
+);
+
+8️⃣ Email Configuration (JavaMail)
+
+Update SMTP settings in your email utility class:
+
+SMTP_HOST = "smtp.gmail.com"
+SMTP_PORT = "587"
+SENDER_EMAIL = "your-email@gmail.com"
+APP_PASSWORD = "your-app-password"
+
+
+Use Gmail App Password (recommended) or SMTP credentials.
+
+🔟 Author
+
+Developed by: Aniket Jumde
+GitHub: https://github.com/aniketjumde
