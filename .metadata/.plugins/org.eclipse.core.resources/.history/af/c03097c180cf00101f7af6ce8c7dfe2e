@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="Email_Verification_Login_System">
+        <property name="context-root" value="Email_Verification_Login_System"/>
+        <property name="java-output-path" value="/Email_Verification_Login_System/target/classes"/>
+    </wb-module>
+</project-modules>

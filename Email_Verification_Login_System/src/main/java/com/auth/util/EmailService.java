@@ -1,0 +1,75 @@
+package com.auth.util;
+
+import java.util.Properties;
+
+import jakarta.mail.Authenticator;
+import jakarta.mail.Message;
+import jakarta.mail.PasswordAuthentication;
+import jakarta.mail.Session;
+import jakarta.mail.Transport;
+import jakarta.mail.internet.InternetAddress;
+import jakarta.mail.internet.MimeMessage;
+
+public class EmailService 
+{
+    private static final String SMTP_HOST = "smtp.gmail.com";
+    private static final String SMTP_PORT = "587";
+    private static final String USERNAME ="a******@gmail.com";                     //"your-email@gmail.com";
+    private static final String PASSWORD ="c***********";                     //"your-app-password";
+    
+    public static void sendVerificationEmail(String toEmail,String verificationLink)
+    {
+    	 String subject = "Verify Your Account";
+         String body = "<h2>Welcome to Our Application</h2>"
+                 + "<p>Please click the link below to verify your account:</p>"
+                 + "<a href=\"" + verificationLink + "\">Verify Account</a>"
+                 + "<p>This link will expire in 24 hours.</p>";
+         
+         sendEmail(toEmail, subject, body);
+    }
+    
+    public static void sendPasswordResetEmail(String toEmail,String resetLink)
+    {
+    	 String subject = "Password Reset Request";
+         String body = "<h2>Password Reset</h2>"
+                 + "<p>You requested to reset your password. Click the link below:</p>"
+                 + "<a href=\"" + resetLink + "\">Reset Password</a>"
+                 + "<p>This link will expire in 1 hour.</p>";
+         
+         sendEmail(toEmail, subject, body);
+    }
+
+	private static void sendEmail(String toEmail, String subject, String body) 
+	{
+		
+		try
+		{
+			Properties props = new Properties();
+            props.put("mail.smtp.auth", "true");
+            props.put("mail.smtp.starttls.enable", "true");
+            props.put("mail.smtp.host", SMTP_HOST);
+            props.put("mail.smtp.port", SMTP_PORT);
+            
+            
+            Session session = Session.getInstance(props, new Authenticator() {
+                protected PasswordAuthentication getPasswordAuthentication() {
+                    return new PasswordAuthentication(USERNAME, PASSWORD);
+                }
+            });
+            
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(USERNAME));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail));
+            message.setSubject(subject);
+            message.setContent(body, "text/html; charset=utf-8");
+            
+            Transport.send(message);
+            System.out.println("Email sent successfully to: " + toEmail);
+		}
+		catch(Exception e)
+		{
+			System.err.println("Failed to send email: " + e.getMessage());
+            throw new RuntimeException("Failed to send email", e);
+		}
+	}
+}

@@ -1,0 +1,3 @@
+INDEX VERSION 1.134
+/home/aniket/Documents/Programming_Languages/EmailVerificationSystem/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1607354607.index
+/Email_Verification_Login_System/src/main/java
