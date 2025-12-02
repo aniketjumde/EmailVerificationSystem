@@ -92,7 +92,7 @@ This system ensures **enterprise-grade authentication**, password recovery, robu
 ---
 
 ## 5️⃣ Project Folder Structure  
-
+```
 Email_Verification_Login_System/
  ├── src/
  │    ├── main/java/com/auth/
@@ -115,34 +115,38 @@ Email_Verification_Login_System/
  │           └── dashboard.jsp
  ├── pom.xml
  └── README.md
-
+```
 ---
 
 ## 6️⃣ How to Run the Project  
 
-### Step 1 — Clone  
+### Step 1 — Clone
+```  
 git clone https://github.com/aniketjumde/EmailVerificationSystem
-
+```
 ### Step 2 — Import as Maven Project  
 
-### Step 3 — Configure Database  
+### Step 3 — Configure Database
+```  
 src/main/resources/hibernate.cfg.xml
-
+```
 ### Step 4 — Create Tables  
 (Use schema below)
 
-### Step 5 — Configure Email SMTP  
+### Step 5 — Configure Email SMTP
+```  
 EmailService.java
-
+```
 ### Step 6 — Deploy on Tomcat  
 
-### Step 7 — Access  
+### Step 7 — Access
+```  
 http://localhost:8080/EmailVerificationSystem/
-
+```
 ---
 
 ## 7️⃣ Database Schema  
-
+```
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -171,16 +175,16 @@ CREATE TABLE login_attempts (
     last_attempt DATETIME,
     locked_until DATETIME NULL
 );
-
+```
 ---
 
 ## 8️⃣ Email Configuration  
-
+```
 SMTP_HOST = "smtp.gmail.com"
 SMTP_PORT = "587"
 SENDER_EMAIL = "your-email@gmail.com"
 APP_PASSWORD = "your-app-password"
-
+```
 ---
 
 ## 🧑‍💻 Developed By  
