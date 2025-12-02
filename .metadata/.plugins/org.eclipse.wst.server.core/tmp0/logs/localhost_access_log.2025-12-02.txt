@@ -39,3 +39,4 @@
 0:0:0:0:0:0:0:1 - - [02/Dec/2025:19:17:51 +0530] "GET /Email_Verification_Login_System/login HTTP/1.1" 200 2206
 0:0:0:0:0:0:0:1 - - [02/Dec/2025:19:17:58 +0530] "POST /Email_Verification_Login_System/login HTTP/1.1" 302 -
 0:0:0:0:0:0:0:1 - - [02/Dec/2025:19:17:58 +0530] "GET /Email_Verification_Login_System/dashboard HTTP/1.1" 200 5293
+127.0.0.1 - - [02/Dec/2025:19:28:17 +0530] "GET / HTTP/1.1" 404 752

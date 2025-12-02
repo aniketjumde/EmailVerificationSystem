@@ -109,3 +109,6 @@
 2025-12-02 19:14:45,898 [Worker-28: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/aniket/Documents/Programming_Languages/EmailVerificationSystem/Email_Verification_Login_System/src/test/resources
 2025-12-02 19:16:12,795 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
 2025-12-02 19:16:12,796 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/aniket/Documents/Programming_Languages/EmailVerificationSystem/Email_Verification_Login_System/src/test/resources
+2025-12-02 19:28:08,532 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2025-12-02 19:30:52,006 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2025-12-02 19:30:52,018 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/aniket/Documents/Programming_Languages/EmailVerificationSystem/Email_Verification_Login_System/src/test/resources
